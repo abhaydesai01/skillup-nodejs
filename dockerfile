@@ -1,5 +1,6 @@
 FROM node:latest
-WORKDIR /Skillup-nodejs project
-COPY index.js /Skillup-nodejs project
-CMD ["node", "index.js"]
+WORKDIR /app
+COPY index.js .
+RUN npm install express mysql body-parser
 EXPOSE 9595
+CMD ["node", "index.js"]
